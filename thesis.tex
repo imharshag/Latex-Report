@@ -1,0 +1,95 @@
+\documentclass[12pt,a4paper]{report}
+% Preamble packages
+\usepackage[utf8]{inputenc}
+\usepackage{mdframed}
+\usepackage{acronym}
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,     
+	citecolor=blue, 
+	urlcolor=blue,
+}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage[left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{lineno}
+\usepackage{comment}
+\usepackage{natbib}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage[toc,page]{appendix}
+\usepackage{ragged2e}
+\usepackage{anyfontsize}
+\usepackage{caption}
+
+% Global definitions
+\def\mytitle{\color{red}Network Intrusion Detection System using
+Machine Learning}
+\def\branch{INFORMATION SCIENCE AND ENGINEERING}
+\def\mydep{DEPARTMENT OF INFORMATION SCIENCE AND ENGINEERING}
+\def\myyear{2023-2024}
+
+\setlength{\parskip}{0.5em} % Adjust the value as needed its the spacing between paragraphs
+
+\begin{document}
+
+\baselineskip=18pt plus1pt
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\pagenumbering{roman}
+
+% Temporarily disable parskip for front matter
+\newlength{\savedparskip}
+\setlength{\savedparskip}{\parskip}
+\setlength{\parskip}{0pt}
+\hypersetup{colorlinks=true, linkcolor={black}, citecolor={black}, urlcolor={black}}
+
+% Front matter
+\include{./front_matter/title_page}
+\setcounter{page}{1}
+\include{./front_matter/abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% Increase font size for main content
+\fontsize{14}{18}\selectfont
+
+% Increase font size for figure captions 
+\captionsetup{font={normalsize, stretch=1.25}}
+
+% Restore parskip for main content
+\setlength{\parskip}{\savedparskip}
+
+% Main material
+\clearpage
+\pagenumbering{arabic}
+\justifying
+\include{./chapters/introduction}
+\include{./chapters/literature_review}
+\include{./chapters/theoretical_work}
+\include{./chapters/results_and_discussions}
+\include{./chapters/conclusions}
+
+% Revert font size to original if needed for other parts
+\fontsize{12}{14.4}\selectfont
+
+% Bibliography
+\bibliographystyle{abbrvnat}
+\bibliography{references}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\end{document}
