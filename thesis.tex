@@ -1,9 +1,10 @@
 \documentclass[12pt,a4paper]{report}
+
 % Preamble packages
-\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath} % Use newtxtext and newtxmath instead of mathptmx and amssymb
+\usepackage{setspace}
 \usepackage{mdframed}
 \usepackage{acronym}
-\usepackage{amssymb}
 \usepackage{wrapfig}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -12,11 +13,11 @@
 \usepackage{hyperref}
 \usepackage{tikz}
 \hypersetup{
-	colorlinks=true,
-	linkcolor=black,
-	filecolor=magenta,     
-	citecolor=black, 
-	urlcolor=black,
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    citecolor=black,
+    urlcolor=black,
 }
 \usepackage{float}
 \usepackage{cleveref}
@@ -35,20 +36,34 @@
 \usepackage{anyfontsize}
 \usepackage{caption}
 \usepackage{titlesec}
-\titleformat{\chapter}[display]
-  {\normalfont\Large\bfseries\centering}  % Adjust the font size and style if needed
-  {\chaptertitlename\ \thechapter}{20pt}{\huge}
-  \titlespacing*{\chapter}{0pt}{-20pt}{40pt} % Adjust the values as needed
 
+\titleformat{\section}
+  {\normalfont\fontsize{12}{16}\selectfont\bfseries}
+  {\thesection}
+  {1em}
+  {}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{16}\selectfont\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\raggedleft}
+  {\small\itshape\chaptertitlename\ \thechapter}
+  {0pt}{\MakeUppercase}{\large}
+  {\Large}
+\titlespacing*{\chapter}{0pt}{-20pt}{40pt}
 
 % Global definitions
-\def\mytitle{\color{red}Network Intrusion Detection System using
-Machine Learning}
+\def\mytitle{Network Intrusion Detection System using Machine Learning}
 \def\branch{INFORMATION SCIENCE AND ENGINEERING}
 \def\mydep{DEPARTMENT OF INFORMATION SCIENCE AND ENGINEERING}
-\def\myyear{2023-2024}
+\def\myyear{May, 2024}
 
-\setlength{\parskip}{0.5em} % Adjust the value as needed its the spacing between paragraphs
+% Set line spacing to 1.5
+\setstretch{1.5}
 
 \begin{document}
 
@@ -64,18 +79,22 @@ Machine Learning}
 
 % Front matter
 \include{./front_matter/title_page}
-\setcounter{page}{1}
+
+\clearpage
+\addcontentsline{toc}{chapter}{ABSTRACT}
 \include{./front_matter/abstract}
 
+\addcontentsline{toc}{chapter}{CONTENTS}
 \tableofcontents
+
 \listoffigures
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+
 \listoftables
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
 
-% Increase font size for main content
-\fontsize{14}{18}\selectfont
-
-% Increase font size for figure captions 
-\captionsetup{font={normalsize, stretch=1.25}}
+% Main content
+\fontsize{12}{15}\selectfont
 
 % Restore parskip for main content
 \setlength{\parskip}{\savedparskip}
@@ -89,9 +108,6 @@ Machine Learning}
 \include{./chapters/theoretical_work}
 \include{./chapters/results_and_discussions}
 \include{./chapters/conclusions}
-
-% Revert font size to original if needed for other parts
-\fontsize{12}{14.4}\selectfont
 
 % Bibliography
 \bibliographystyle{abbrvnat}
