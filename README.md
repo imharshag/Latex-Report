@@ -20,6 +20,9 @@ This GitHub repository provides a comprehensive LaTeX report template tailored s
 - ***Compile:*** Use a LaTeX editor like Overleaf or TeXShop to compile the document and generate the final report in PDF format. ⚙️
 - ***Customization:*** Modify the template to suit specific project requirements while adhering to the university's guidelines for formatting and styling.
 
+### Contact
+For inquiries or feedback, please contact **[Harsha G](mailto:harshag3106@gmail.com)**.
+
 ### Contribution
 Contributions and feedback from students at JSS Science and Technology University are welcome to enhance and improve the template for better usability and compatibility with the university's academic standards. 🤝
 
